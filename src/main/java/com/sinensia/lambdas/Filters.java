@@ -30,6 +30,7 @@ public final class Filters {
         if(melons.isEmpty()){
             return melons;
         }
+        System.out.println("\nMelons weight "+weight);
         for (Melon melon : melons) {
             switch(mode) {
                 case "eq":
@@ -50,5 +51,18 @@ public final class Filters {
             }
         }
         return filteredMelons;
+    }
+
+    public static List<Melon> filterMelons(List<Melon> melons, MelonPredicate predicate){
+        if(melons == null){
+            throw new IllegalArgumentException("Melons cannot be null");
+        }
+        List<Melon> result = new ArrayList<>();
+        for(Melon melon: melons){
+            if(melon != null && predicate.test(melon)){
+                result.add(melon);
+            }
+        }
+        return result;
     }
 }

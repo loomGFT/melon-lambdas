@@ -25,10 +25,16 @@ public class Main {
         for (Melon x : bailan) {
             System.out.println(x);
         }
-        System.out.println("\nMelons weight = 1200KG:");
+
         List<Melon> weightMelons = Filters.filterByWeight(melons, 2000, "lt");
         for (Melon x : weightMelons) {
             System.out.println(x);
+        }
+
+        System.out.println("Gac melon list:");
+        List<Melon> gac = Filters.filterMelons(melons, new GacMelonPredicate());
+        for(Melon m: gac){
+            System.out.println(m);
         }
     }
 
