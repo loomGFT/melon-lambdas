@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class Main {
 
     public static void main(String[] args) {
@@ -25,7 +26,7 @@ public class Main {
             System.out.println(x);
         }
         System.out.println("\nMelons weight = 1200KG:");
-        List<Melon> weightMelons = Filters.filterByWeight(melons, 1200);
+        List<Melon> weightMelons = Filters.filterByWeight(melons, 1200, true);
         for (Melon x : weightMelons) {
             System.out.println(x);
         }
