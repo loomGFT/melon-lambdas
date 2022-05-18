@@ -1,5 +1,9 @@
 package com.sinensia.lambdas;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -11,9 +15,32 @@ public class Main {
                 new Melon("Bailan", 1300, "China")
         );
 
-        for (int i = 0; i < melons.size(); ++i) {
-            System.out.println(melons.get(i).toString());
+        for (Melon melon : melons) {
+            System.out.println(melon);
         }
 
+        System.out.println("\nBailan melons:");
+        List<Melon> bailan = filterByType(melons, "Bailan");
+        for (Melon x : bailan) {
+            System.out.println(x);
+        }
+
+
+    }
+    public static List<Melon> filterByType(List<Melon> melons, String type) {
+        List<Melon> filteredMelons = new ArrayList<>();
+        if(melons == null || type == null) {
+            throw new IllegalArgumentException("Melons / type cannot be null");
+        }
+        if(melons.isEmpty()){
+            return melons;
+        }
+        for (Melon melon : melons) {
+            if (melon.getType().equalsIgnoreCase(type)) {
+                filteredMelons.add(melon);
+            }
+        }
+
+        return filteredMelons;
     }
 }
