@@ -41,6 +41,12 @@ public class Main {
         for(Melon m: heavy){
             System.out.println(m);
         }
+
+        System.out.println("Heavyweight melon list:");
+        List<Melon> heavyWeight = Filters.filterMelons(melons, melon -> melon!= null && melon.getWeight() >= 6000);
+        for(Melon m: heavyWeight){
+            System.out.println(m);
+        }
     }
 
 }
