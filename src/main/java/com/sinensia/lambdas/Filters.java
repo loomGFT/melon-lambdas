@@ -22,25 +22,32 @@ public final class Filters {
         }
         return filteredMelons;
     }
-    public static List<Melon> filterByWeight(List<Melon> melons, int weight, boolean exact){
+    public static List<Melon> filterByWeight(List<Melon> melons, int weight,String mode){
         List<Melon> filteredMelons = new ArrayList<>();
-        if(melons == null) {
+        if(melons == null || weight <= 0) {
             throw new IllegalArgumentException("Melons cannot be null");
         }
         if(melons.isEmpty()){
             return melons;
         }
         for (Melon melon : melons) {
-            if(exact){
-                if (melon.getWeight() == weight) {
-                    filteredMelons.add(melon);
-                }
-            } else {
-                if(melon.getWeight() >= weight) {
-                    filteredMelons.add(melon);
-                }
+            switch(mode) {
+                case "eq":
+                    if (melon.getWeight() == weight) {
+                        filteredMelons.add(melon);
+                    }
+                    break;
+                case "gt":
+                    if (melon.getWeight() >= weight) {
+                        filteredMelons.add(melon);
+                    }
+                    break;
+                case "lt":
+                    if (melon.getWeight() <= weight) {
+                        filteredMelons.add(melon);
+                    }
+                    break;
             }
-
         }
         return filteredMelons;
     }

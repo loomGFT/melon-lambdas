@@ -26,7 +26,7 @@ public class Main {
             System.out.println(x);
         }
         System.out.println("\nMelons weight = 1200KG:");
-        List<Melon> weightMelons = Filters.filterByWeight(melons, 1200, true);
+        List<Melon> weightMelons = Filters.filterByWeight(melons, 2000, "lt");
         for (Melon x : weightMelons) {
             System.out.println(x);
         }
