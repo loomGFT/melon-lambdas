@@ -35,6 +35,12 @@ public class Main {
         for(Melon m: gac){
             System.out.println(m);
         }
+
+        System.out.println("Heavyweight melon list:");
+        List<Melon> heavy = Filters.filterMelons(melons, new HeavyMelonPredicate());
+        for(Melon m: heavy){
+            System.out.println(m);
+        }
     }
 
 }
