@@ -20,27 +20,15 @@ public class Main {
         }
 
         System.out.println("\nBailan melons:");
-        List<Melon> bailan = filterByType(melons, "Bailan");
+        List<Melon> bailan = Filters.filterByType(melons, "Bailan");
         for (Melon x : bailan) {
             System.out.println(x);
         }
-
-
+        System.out.println("\nMelons weight = 1200KG:");
+        List<Melon> weightMelons = Filters.filterByWeight(melons, 1200);
+        for (Melon x : weightMelons) {
+            System.out.println(x);
+        }
     }
-    public static List<Melon> filterByType(List<Melon> melons, String type) {
-        List<Melon> filteredMelons = new ArrayList<>();
-        if(melons == null || type == null) {
-            throw new IllegalArgumentException("Melons / type cannot be null");
-        }
-        if(melons.isEmpty()){
-            return melons;
-        }
-        for (Melon melon : melons) {
-            if (melon.getType().equalsIgnoreCase(type)) {
-                filteredMelons.add(melon);
-            }
-        }
 
-        return filteredMelons;
-    }
 }
