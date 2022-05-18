@@ -47,6 +47,11 @@ public class Main {
         for(Melon m: heavyWeight){
             System.out.println(m);
         }
-    }
 
+        System.out.println("Watermelon List:");
+        List<Melon> watermelons = Filters.filter(melons, (Melon m) -> m.getType().equalsIgnoreCase("watermelon"));
+        for(Melon m : watermelons){
+            System.out.println(m);
+        }
+    }
 }
