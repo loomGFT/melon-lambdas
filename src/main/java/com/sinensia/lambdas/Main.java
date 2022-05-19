@@ -1,5 +1,6 @@
 package com.sinensia.lambdas;
 
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -53,5 +54,8 @@ public class Main {
         for(Melon m : watermelons){
             System.out.println(m);
         }
+
+        System.out.println("Melon stream");
+        melons.stream().forEach(x -> System.out.println(x));
     }
 }
